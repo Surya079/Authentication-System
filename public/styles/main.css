@@ -1,0 +1,102 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url('/images/bg-img.avif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.nav-header{
+    text-align: center;
+    
+    display: flex;
+    justify-content: center;
+}
+.title{
+    text-shadow: 6px 6px 5px black;
+    font-size: 1rem;
+    color: white;
+    width: fit-content;
+    margin: 0;
+    padding: 10px;
+    font-weight: 800;
+}
+.title h1{
+    margin: 0;
+}
+.login-title{
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 0;
+}
+.main-container{
+    height: 80vh;
+    position: relative;
+    
+}
+.login-page{
+    border: 1px solid white;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.916);
+    width: fit-content;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    
+}
+label{
+    font-size: 1rem;
+    font-weight: 700;
+    margin-top: 10px;
+}
+input{
+    margin-top: 5px;
+    outline: none;
+    background: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom:1px solid green;
+    width: 300px;
+    height: 30px;
+}
+.btn{
+    padding-inline: 10px;
+    padding-block: 5px;
+    background-color: green;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+sup{
+    color: red;
+}
+.login-btn{
+    margin-top: 10px;
+    width: fit-content;
+    
+}
+b{
+    margin-left: 10px;
+}
+.input-email{
+    margin-top: 10px;
+}
+.input-password{
+    margin-top: 10px;
+}
+.google-login-img{
+    width: 15px;
+    margin-top: 2px;
+    padding: 2px;
+    margin-inline: 5px;
+}
+.local-login-btn{
+    margin-block: 5px;
+}
+.google-login-btn{
+    margin-block: 5px;
+}
