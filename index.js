@@ -30,7 +30,7 @@ const db = new pg.Client({
     host : process.env.HOST_NAME,
     password : process.env.PASSWORD,
     port : process.env.PORT,
-}) 
+});
 db.connect();
 
 
@@ -41,12 +41,12 @@ app.get('/', (req, res)=>{
 
 // Get Register page
 app.get('/register', (req, res)=>{
-    res.render("register.ejs")
+    res.render("register.ejs");
 })
 
 // Get Login Page
 app.get('/login', (req, res)=>{
-    res.render("login.ejs")
+    res.render("login.ejs");
 })
 
 // Register user
@@ -54,6 +54,7 @@ app.get('/login', (req, res)=>{
 app.post('/register', async (req, res)=>{
     const email = req.body.username;
     const password = req.body.password;
+    const Repassword = req.body.Repassword;
     const mobile = req.body.mobile;
 
     try {
@@ -62,16 +63,23 @@ app.post('/register', async (req, res)=>{
             if (checking_Data.rows[0] > 0) {
                 res.render("register.ejs", { error : "You have already registered."})
             } else {
-                bcrypt.hash(passport,saltRounds, async(err , hash)=>{
-                    if (err) {
-                        console.log(err);
-                    } else{
-                        const Inserting_Data = await db.query("insert into")
+                if (passport === Repassword) {   
+                        bcrypt.hash(password,saltRounds, async(err , hash)=>{
+                            if (err) {
+                                console.log(err);
+                            } else{
+                                
+                                const Inserting_Data = await db.query("insert into users (email,password,mobile) values ($1,$2,$3)",[email,hash,mobile]);
+                                res.redirect("/");
+                            }
+                        });
                     }
-                })
+                else {
+                    res.render("register.ejs", ({error : "Password doesn't match"}));
+                } 
             }
         } catch (error) {
-            
+            console.log(error);
         }
     } catch (error) {
         console.log("Error While checking email are availabe");
