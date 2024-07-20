@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/main.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Authendication System</title>
+</head>
+<body>
+    <%- include("partials/heading.ejs") %>
+
+    <div class="main-container">
+        <div class="login-page">
+            <div class="login-title">
+                <h3>Login</h3>
+            </div>
+            <form action="/login" method="post">
+                <div class="input-email">
+                    <label for="email">Email <sup>*</sup> :</label><br>
+                    <input type="email" name="email" placeholder="Type your email..." required>
+                </div>
+                <div class="input-password">
+                    <label for="password">Password <sup>*</sup> :</label><br>
+                    <input type="password" name="password" placeholder="Type your password..." required>
+                </div>
+                <div class="input-password">
+                    <label for="password">Re-Password <sup>*</sup> :</label><br>
+                    <input type="password" name="password" placeholder="Again type your password..." required>
+                </div>
+                <div class="input-contact">
+                    <label for="mobile">Mobile<sup>*</sup> :</label><br>
+                    <input type="text" name="mobile" placeholder="Type your mobile number..." required>
+                </div>
+                <br>
+                <div class="login-btn">
+                    <div class="local-login-btn">
+                        <button class="btn">sign in</button>
+                    </div>
+                    <b>or</b>
+                    <div class="google-login-btn">
+                        <a href="/auth/google" >
+                            <img src="/images/google-icon.png" class="google-login-img" alt="">
+                        </a>
+                    </div>
+                </div>
+    
+            </form>
+        </div>
+    </div>
+</body>
+</html>
